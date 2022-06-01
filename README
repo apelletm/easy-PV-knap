@@ -1,0 +1,40 @@
+#########################################################################################
+##  These files contain the code used for the experiments described in the submission ###
+##  "Some Easy Instances of Ideal-SVP and Implications to the Partial Vandermonde     ###
+##  Knapsack Problem"                                                                 ###
+#########################################################################################
+
+Running the experiments
+========================
+To reproduce the experiments, run the file "05-experiments.sage" in sage, with version >= 9.0
+
+To do so, open a terminal in the "code_PV-Knap" directory
+You can either type directly in the terminal
+   sage 05-experiments.sage
+   
+or start sage
+   sage
+   
+and then type in sage
+   load("05-experiments.sage")
+
+or just copy-paste the part of the experiments you want to execute in sage.
+
+Reproducibility
+================
+The random seed has been fixed for reproducibility of the result. 
+It is reset before every computation, so that the computations can be performed in
+an arbitrary order.
+
+Time
+=====
+Running all the experiments (via load("05-experiments.sage") for instance) 
+should take <= 16h on a personnal laptop
+More precise run times for each experiment are written in the file 05-experiments.sage,
+in a comment after the command for running the experiment.
+
+Warnings
+=========
+- The first experiments (testing worst-case choices of Omega) seem to have some memory leakage. Running them all requires 2 to 3 Go of memory. If you don't have this amount of memory available on your computer, you can run the experiments one by one by copy-pasting the corresponding line of "05-experiments.sage" in sage. Close sage and reopen it between every execution in order to free the lost memory.
+
+- When running the last experiment (distinguishing attack on average case Omega for LZA1), make sure that you have a folder called "data" at the place where you run the code. There should be one if you run the code in the directory "code_PV-Knap" provided here, but if you run the code from a different place, you should first create a "data" folder. This folder will be used to save the partially reduced matrix computed during the experiments (so that we can start from an already partially reduced matrix if the attack fails and we need to reduce the matrix even more).
